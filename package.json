@@ -1,19 +1,16 @@
 {
 	"name": "dice-rolling",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Quick, easy way to roll multiple (sets) dice ",
 	"main": "index.js",
 	"scripts": {
 		"start": "parcel index.html",
-		"build": "parcel build index.html"
+		"build": "parcel build index.html -d docs/"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
-	],
+	"browserslist": ["> 1%", "last 2 versions"],
 	"postcss": {
 		"modules": true,
 		"plugins": {
