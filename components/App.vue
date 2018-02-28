@@ -18,13 +18,14 @@
 
 <script>
 import DiceGroup from "./DiceGroup.vue";
+let groupId = 0;
 export default {
 	components: { DiceGroup },
 	data() {
 		return {
 			diceGroups: [
 				{
-					id: new Date().toString()
+					id: groupId++
 				}
 			]
 		};
@@ -50,7 +51,7 @@ export default {
 
 .background {
 	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-		url("https://source.unsplash.com/random/1920x1080") fixed no-repeat
+		url("https://source.unsplash.com/CltI5xgDAs0/1920x1080") fixed no-repeat
 			center center;
 }
 body {
@@ -71,5 +72,14 @@ body {
 	margin-top: 8px;
 	justify-content: center;
 	width: 100%;
+}
+
+@media (min-width: 500px) {
+	.dice {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 </style>

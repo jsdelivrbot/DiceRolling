@@ -27,11 +27,9 @@
 		</div>
 		<div class="results__container" v-if="results.length">
 			<h3 class="results__title">Results</h3>
-			<ul class="results">
-				<li class="results__item" v-for="result in results" :key="result.id">
-					{{result.number}}
-				</li>
-			</ul>
+			<div class="results">
+				{{resultsStr}}
+			</div>
 		</div>
 		<div class="delete-button__container">
 			<button class="delete-button" @click="deleteGroup">Delete Group</button>
@@ -41,6 +39,11 @@
 
 <script>
 export default {
+	computed: {
+		resultsStr() {
+			return this.results.join(", ");
+		}
+	},
 	data() {
 		return {
 			maximum: 6,
@@ -65,12 +68,7 @@ export default {
 		rollDice() {
 			this.results = [];
 			for (let i = 0; i < this.quantity; ++i) {
-				let result = {
-					id: new Date().toString(),
-					number: getRandomInt(this.minimum, this.maximum)
-				};
-				console.log(result);
-				this.results.push(result);
+				this.results.push(getRandomInt(this.minimum, this.maximum));
 			}
 		}
 	},
@@ -86,8 +84,9 @@ function getRandomInt(min, max) {
 .group {
 	background: rgba(0, 0, 0, 0.3);
 	border-radius: 8px;
-	margin: 4px 0;
+	margin: 4px 4px;
 	padding: 16px;
+	text-align: center;
 }
 .group > * {
 	margin-top: 8px;
@@ -96,7 +95,10 @@ function getRandomInt(min, max) {
 	display: block;
 	margin-top: 4px;
 }
-.value-input__container > * {
-	display: block;
+.value-input__container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 </style>
