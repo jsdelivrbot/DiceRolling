@@ -1,5 +1,6 @@
 {
 	"editor.formatOnSave": true,
 	"prettier.disableLanguages": [],
-	"prettier.useTabs": true
+	"prettier.useTabs": true,
+	"git.enabled": true
 }
