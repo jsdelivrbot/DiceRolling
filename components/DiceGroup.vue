@@ -1,25 +1,25 @@
 <template>
 	<li class="group">
 		<div class="name">
-			<label>
-				Name: 
-				<input type="text" v-model="name">
+			<label class="value-input__container">
+				<span class="label__text">Name: </span>
+				<input class="value-input" type="text" v-model="name">
 			</label>
 		</div>
 		<div class="quantity">
-			<label>
-				Quantity: 
-				<input v-model="quantity" type="number" min="0">
+			<label class="value-input__container">
+				<span class="label__text">Quantity: </span>
+				<input class="value-input" v-model="quantity" type="number" min="0">
 			</label>
 		</div>
 		<div class="range">
-			<label>
-				Min:
-				<input v-model="minimum" type="number" min="0">
+			<label class="value-input__container">
+				<span class="label__text">Min:</span>
+				<input class="value-input" v-model="minimum" type="number" min="0">
 			</label>
-			<label>
-				Max:
-				<input v-model="maximum" type="number" :min="minimum + 1">
+			<label class="value-input__container">
+				<span class="label__text">Max:</span>
+				<input class="value-input" v-model="maximum" type="number" :min="minimum + 1">
 			</label>
 		</div>
 		<div class="roll__container">
@@ -83,5 +83,20 @@ function getRandomInt(min, max) {
 </script>
 
 <style>
-
+.group {
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	margin: 4px 0;
+	padding: 16px;
+}
+.group > * {
+	margin-top: 8px;
+}
+.range > * {
+	display: block;
+	margin-top: 4px;
+}
+.value-input__container > * {
+	display: block;
+}
 </style>

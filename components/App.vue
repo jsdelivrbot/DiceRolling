@@ -1,5 +1,5 @@
 <template>
-<body>
+<body class="background">
 	<header>
 		<h1>Dice Rolling</h1>
 	</header>
@@ -46,8 +46,30 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+.background {
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+		url("https://source.unsplash.com/random/1920x1080") fixed no-repeat
+			center center;
+}
 body {
+	align-items: center;
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	font-family: "Open Sans", sans-serif;
 	margin: 0;
 	padding: 16px;
+}
+.dice {
+	list-style: none;
+	padding: 0;
+}
+.add-group-button__container {
+	display: flex;
+	margin-top: 8px;
+	justify-content: center;
+	width: 100%;
 }
 </style>
